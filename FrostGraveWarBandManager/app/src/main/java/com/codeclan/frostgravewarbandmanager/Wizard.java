@@ -1,19 +1,22 @@
 package com.codeclan.frostgravewarbandmanager;
 
 
+import android.content.Intent;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Wizard {
+public class Wizard implements Serializable {
 
     private String name;
     private String school;
-    public ArrayList<Spell> spellBook;
+//    public ArrayList<Spell> spellBook;
     public int gold;
 
     public Wizard (String name, String school) {
         this.name = name;
         this.school = school;
-        this.spellBook = new ArrayList<Spell>();
+//        this.spellBook = new ArrayList<Spell>();
         this.gold = 500;
     }
 
@@ -33,13 +36,13 @@ public class Wizard {
         return this.gold;
     }
 
-    public String getSpellBook() {
-        return this.spellBook.toString();
-    }
+//    public String getSpellBook() {
+//        return this.spellBook.toString();
+//    }
 
-    public Spell getSpell(int index) {
-        return this.spellBook.get(index);
-    }
+//    public Spell getSpell(int index) {
+//        return this.spellBook.get(index);
+//    }
 
     public int transact(int i) {
         return this.gold += i;

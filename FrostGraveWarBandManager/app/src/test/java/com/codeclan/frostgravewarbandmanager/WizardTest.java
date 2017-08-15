@@ -43,21 +43,21 @@ public class WizardTest {
         assertEquals(400, wizard.getGold());
     }
 
-    @Test
-    public void canGetSpellBook() {
-        assertEquals("[]", wizard.getSpellBook());
-    }
+//    @Test
+//    public void canGetSpellBook() {
+//        assertEquals("[]", wizard.getSpellBook());
+//    }
 
-    @Test
-    public void canAddSpellToSpellBook() {
-        wizard.spellBook.add(spell);
-        assertEquals(spell, wizard.getSpell(0));
-    }
+//    @Test
+//    public void canAddSpellToSpellBook() {
+//        wizard.spellBook.add(spell);
+//        assertEquals(spell, wizard.getSpell(0));
+//    }
 
-    @Test
-    public void canRemoveSpellFromSpellBook() {
-        wizard.spellBook.remove(spell);
-        assertEquals(0, wizard.spellBook.size());
-    }
+//    @Test
+//    public void canRemoveSpellFromSpellBook() {
+//        wizard.spellBook.remove(spell);
+//        assertEquals(0, wizard.spellBook.size());
+//    }
 
 }

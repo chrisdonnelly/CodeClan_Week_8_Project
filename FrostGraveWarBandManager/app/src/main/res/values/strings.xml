@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">FrostGrave WarBand Manager</string>
+    <string name="dialog_enter_name">Enter wizard name...</string>
+    <string name="dialog_choose_school">Select your school...</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="menu_toast_hello">Hello!</string>
+    <string name="menu_toast_getLost">Get Lost!</string>
+    <string name="action_new_warband">New Warband</string>
+    <string name="preference_file_key">SAVED_WIZARDS</string>
+    <string name="menu_home">Home</string>
+    <string name="action_home">Home</string>
+    <string name="create_new_warband">Create New Warband</string>
+    <string name="my_warbands">My Warbands</string>
+
 </resources>

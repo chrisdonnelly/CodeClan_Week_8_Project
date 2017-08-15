@@ -1,0 +1,20 @@
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/action_home"
+        android:icon="?attr/homeAsUpIndicator"
+        android:onClick="onButtonClickedManage"
+        android:title="@string/action_home"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_new_warband"
+        android:icon="@android:drawable/ic_menu_add"
+        android:onClick="onButtonClickedNew"
+        android:title="@string/action_new_warband"
+        app:showAsAction="always" />
+
+</menu>
