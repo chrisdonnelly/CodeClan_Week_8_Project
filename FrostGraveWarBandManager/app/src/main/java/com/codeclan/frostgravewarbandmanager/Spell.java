@@ -2,16 +2,16 @@ package com.codeclan.frostgravewarbandmanager;
 
 public class Spell {
 
-    private String name;
+    private String spellName;
     private String school;
 
-    public Spell(String name, String school) {
-        this.name = name;
+    public Spell(String spellName, String school) {
+        this.spellName = spellName;
         this.school = school;
     }
 
-    public String getName() {
-        return this.name;
+    public String getSpellName() {
+        return this.spellName;
     }
 
     public String getSchool() {

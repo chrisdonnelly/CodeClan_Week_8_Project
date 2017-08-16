@@ -10,14 +10,16 @@ public class Wizard implements Serializable {
 
     private String name;
     private String school;
-//    public ArrayList<Spell> spellBook;
+    public ArrayList<Spell> spellBook;
     public int gold;
+    public ArrayList<Soldier> soldiers;
 
     public Wizard (String name, String school) {
         this.name = name;
         this.school = school;
-//        this.spellBook = new ArrayList<Spell>();
+        this.spellBook = new ArrayList<Spell>();
         this.gold = 500;
+        this.soldiers = new ArrayList<Soldier>();
     }
 
     public String getName() {
@@ -36,13 +38,17 @@ public class Wizard implements Serializable {
         return this.gold;
     }
 
-//    public String getSpellBook() {
-//        return this.spellBook.toString();
-//    }
+    public String getSpellBook() {
+        return this.spellBook.toString();
+    }
 
-//    public Spell getSpell(int index) {
-//        return this.spellBook.get(index);
-//    }
+    public Spell getSpell(int index) {
+        return this.spellBook.get(index);
+    }
+
+    public void addSpell(Spell spell) {
+        this.spellBook.add(spell);
+    }
 
     public int transact(int i) {
         return this.gold += i;

@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".MyWarBandsActivity" />
         <activity android:name=".NewWarBandActivity" />
-        <activity android:name=".ManageWarBandsActivity"></activity>
+        <activity android:name=".ManageWarBandsActivity" />
+        <activity android:name=".ThisWarBandActivity"></activity>
     </application>
 
 </manifest>

@@ -1,14 +1,21 @@
 package com.codeclan.frostgravewarbandmanager;
 
 
+import java.util.Random;
+
 public class Soldier {
 
-    private String name;
-    private String type;
-    private int cost;
+    public String name;
+    public String type;
+    public int cost;
+    private NameGenerator nameGenerator;
+    private Random generator;
 
-    public Soldier(String name, String type, int cost) {
-        this.name = name;
+    public Soldier(String type, int cost) {
+        nameGenerator = new NameGenerator();
+        generator = new Random();
+        int randomIndex = generator.nextInt(nameGenerator.names.length);
+        this.name = nameGenerator.names[randomIndex];
         this.type = type;
         this.cost = cost;
     }
@@ -19,6 +26,10 @@ public class Soldier {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getType() {
+        return this.type;
     }
 
     public int getCost() {

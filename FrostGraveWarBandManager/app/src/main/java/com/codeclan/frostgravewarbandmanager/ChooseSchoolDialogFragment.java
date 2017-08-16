@@ -1,6 +1,5 @@
 package com.codeclan.frostgravewarbandmanager;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -19,10 +18,6 @@ public class ChooseSchoolDialogFragment extends DialogFragment {
     NoticeDialogListener mListener;
     int mStoreChoice;
 
-
-
-
-
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceSate) {
 
@@ -34,9 +29,6 @@ public class ChooseSchoolDialogFragment extends DialogFragment {
             primitiveSchools[count] = school.getSchoolName();
             count++;
         }
-
-//        schoolsAdapter = new WizardSchoolsAdapter(getContext(), schools);
-
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
@@ -57,19 +49,12 @@ public class ChooseSchoolDialogFragment extends DialogFragment {
 
                     }
                 });
-//
-//                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int i) {
-//                        dialog.dismiss();
-//                    }
-//                });
+
     return builder.create();
     }
 
     public interface NoticeDialogListener {
         public void onDialogPositiveClick(DialogFragment dialog, int i);
-//        public void onDialogNegativeClick(DialogFragment dialog, int i);
     }
 
     @Override

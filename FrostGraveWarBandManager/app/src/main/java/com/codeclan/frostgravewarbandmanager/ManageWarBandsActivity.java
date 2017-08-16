@@ -1,19 +1,17 @@
 package com.codeclan.frostgravewarbandmanager;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
-import android.widget.TextView;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import java.util.ArrayList;
-import java.util.Map;
 
 public class ManageWarBandsActivity extends AppCompatActivity {
 
@@ -41,33 +39,15 @@ public class ManageWarBandsActivity extends AppCompatActivity {
         ListView thisView = (ListView) findViewById(R.id.warbands_list);
 
         thisView.setAdapter(warAdapter);
+    }
 
+    public void getWarband(View listItem){
+        Wizard wizard = (Wizard) listItem.getTag();
 
-//        TextView list = (TextView)findViewById(R.id.warband_list);
-//        String wizardString = " ";
-//
-//        for(Wizard w : wizards){
-//            wizardString += w.getName() + " the " + w.getSchool() + " " + w.getGold() + " Gold" + "\n";
-//        }
-//
-//        list.setText(wizardString);
+        Intent intent = new Intent (this, ThisWarBandActivity.class);
+        intent.putExtra("wizard", wizard);
 
-
-
-
-//        SharedPreferences prefs = this.getSharedPreferences(
-//                "SAVED_WIZARDS", Context.MODE_PRIVATE);
-//
-//        Map<String, ?> allWarbands = prefs.getAll();
-//
-//        for (Map.Entry<String, ?> entry : allWarbands.entrySet()) {
-//
-//            TextView warbandList = (TextView) findViewById(R.id.warband_list);
-//
-//            warbandList.setText(entry.getValue().toString());
-//        }
-
-
+        startActivity(intent);
     }
 
 }
