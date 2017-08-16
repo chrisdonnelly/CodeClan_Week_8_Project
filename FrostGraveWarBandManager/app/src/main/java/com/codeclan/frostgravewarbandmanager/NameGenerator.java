@@ -6,7 +6,7 @@ public class NameGenerator {
     public String[] names;
 
     public NameGenerator() {
-        this.names = new String[10];
+        this.names = new String[13];
         this.names[0] = "Merek";
         this.names[1] = "Carac";
         this.names[2] = "Ulric";

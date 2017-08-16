@@ -12,12 +12,12 @@ public class SoldierTest {
 
     @Before
     public void before() {
-        soldier = new Soldier("Harold", "Thug", 50);
+        soldier = new Soldier("Thug", 50);
     }
 
     @Test
-    public void canGetName(){
-        assertEquals("Harold", soldier.getName());
+    public String canGetName(){
+        return soldier.getName();
     }
 
     @Test

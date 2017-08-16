@@ -1,5 +1,6 @@
 package com.codeclan.frostgravewarbandmanager;
 
+import android.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -7,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class ThisWarBandActivity extends AppCompatActivity {
+public class ThisWarBandActivity extends AppCompatActivity implements RecruitDialogFragment.RecruitDialogListener{
 
     SoldierList soldierList;
     Button buttonRecruit;
@@ -41,4 +42,11 @@ public class ThisWarBandActivity extends AppCompatActivity {
         RecruitDialogFragment recruitDialogFragment = new RecruitDialogFragment();
         recruitDialogFragment.show(getFragmentManager(), "recruit soldiers");
     }
+
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog, int items) {
+        RecruitDialogFragment recruitDialogFragment = new RecruitDialogFragment();
+        recruitDialogFragment.show(getFragmentManager(), "soldier choice");
+    }
+
 }

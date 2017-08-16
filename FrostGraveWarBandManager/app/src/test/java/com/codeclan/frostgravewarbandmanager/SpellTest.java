@@ -16,7 +16,7 @@ public class SpellTest {
 
     @Test
     public void canGetName() {
-        assertEquals("Enchant Weapon", spell.getName());
+        assertEquals("Enchant Weapon", spell.getSpellName());
     }
 
     @Test

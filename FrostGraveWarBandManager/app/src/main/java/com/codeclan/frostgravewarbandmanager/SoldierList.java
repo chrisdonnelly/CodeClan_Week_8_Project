@@ -1,6 +1,8 @@
 package com.codeclan.frostgravewarbandmanager;
 
 
+import android.app.usage.UsageEvents;
+
 import java.util.ArrayList;
 
 public class SoldierList {
@@ -30,5 +32,10 @@ public class SoldierList {
     public int getSoldierCost(int i) {
         Soldier currentSoldier = roster.get(i);
         return currentSoldier.getCost();
+    }
+
+    public Soldier getSoldier(int i) {
+        Soldier currentSoldier = roster.get(i);
+        return currentSoldier;
     }
 }

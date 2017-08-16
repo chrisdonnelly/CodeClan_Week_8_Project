@@ -2,8 +2,6 @@ package com.codeclan.frostgravewarbandmanager;
 
 import java.util.ArrayList;
 
-import static android.R.id.list;
-
 public class WizardSchools {
 
     public ArrayList<School> schools;

@@ -63,6 +63,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="29dp"
+        android:onClick="onButtonClickedRecruit"
         android:text="recruit soldiers"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/this_gold"

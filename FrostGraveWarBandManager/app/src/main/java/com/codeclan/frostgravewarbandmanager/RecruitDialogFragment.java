@@ -3,64 +3,64 @@ package com.codeclan.frostgravewarbandmanager;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
-import android.content.ClipData;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
-
-
 
 import java.util.ArrayList;
 
 public class RecruitDialogFragment extends DialogFragment {
 
     SoldierList soldierList;
-    RecruitDialogListener recruitDialogListener;
-    ArrayList items;
+    ArrayList<Soldier> roster;
+    ArrayList<Soldier> selectedSoldiers;
+    Soldier recruitedSoldier;
+    RecruitDialogListener rListener;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
-        items = new ArrayList(1);
+        soldierList = new SoldierList();
+        roster = soldierList.getRoster();
+
+        selectedSoldiers= new ArrayList<Soldier>();
+
+        String[] primitiveSoldiers = new String[2];
+        int count = 0;
+        for (Soldier soldier : roster){
+            primitiveSoldiers[count] = soldier.getName();
+            count++;
+        }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         builder.setTitle(R.string.pick_soldiers)
 
-                .setMultiChoiceItems(soldierList, null,
-                        new DialogInterface.OnMultiChoiceClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which,
-                                                boolean isChecked) {
-                                if (isChecked) {
-                                    items.add(which);
-                                } else if (items.contains(which)) {
-                                    mSelectedItems.remove(Integer.valueOf(which));
-                                }
-                            }
-                        })
-                // Set the action buttons
+                .setMultiChoiceItems(primitiveSoldiers, null, new DialogInterface.OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i, boolean isChecked) {
+                        if (isChecked) {
+                            Soldier recruitedSoldier = roster.get(i);
+                            selectedSoldiers.add(recruitedSoldier);
+                        } else if (selectedSoldiers.contains(recruitedSoldier)) {
+                            selectedSoldiers.remove(i);
+                        }
+                    }
+                })
                 .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        // User clicked OK, so save the mSelectedItems results somewhere
-                        // or return them to the component that opened the dialog
-                   ...
+
                     }
                 })
                 .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                   ...
+                        dialog.dismiss();
                     }
                 });
-
         return builder.create();
     }
-
-
-
 
     public interface RecruitDialogListener {
         public void onDialogPositiveClick(DialogFragment dialog, int i);
@@ -70,7 +70,7 @@ public class RecruitDialogFragment extends DialogFragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         try {
-            mListener = (ChooseSchoolDialogFragment.NoticeDialogListener) context;
+            rListener = (RecruitDialogFragment.RecruitDialogListener) context;
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString()
                     + " must implement NoticeDialogListener");
