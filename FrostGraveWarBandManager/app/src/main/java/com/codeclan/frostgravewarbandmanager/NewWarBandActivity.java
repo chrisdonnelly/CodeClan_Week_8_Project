@@ -19,7 +19,6 @@ public class NewWarBandActivity extends AppCompatActivity implements ChooseSchoo
     Button choose;
     Button save;
     WizardSchools wizardSchools;
-    TextView magic_school;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +46,6 @@ public class NewWarBandActivity extends AppCompatActivity implements ChooseSchoo
 
     @Override
     public void onDialogPositiveClick(DialogFragment dialog, int schoolChoice) {
-        Log.d("where am I", String.valueOf(schoolChoice));
         school = wizardSchools.getName(schoolChoice);
         TextView magic_school = (TextView) findViewById(R.id.magic_school);
         magic_school.setText(school);
@@ -58,9 +56,6 @@ public class NewWarBandActivity extends AppCompatActivity implements ChooseSchoo
         String wizardName = wizardNameEditText.getText().toString();
 
         Wizard wizard = new Wizard(wizardName, school);
-
-        Log.d("check wizard",wizard.getName());
-        Log.d("check wizard",wizard.getSchool());
 
         Intent intent = new Intent (this, MyWarBandsActivity.class);
         intent.putExtra("wizard", wizard);

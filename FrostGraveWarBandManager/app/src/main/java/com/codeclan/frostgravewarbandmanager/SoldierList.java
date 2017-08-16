@@ -5,30 +5,30 @@ import java.util.ArrayList;
 
 public class SoldierList {
 
-    public ArrayList<Soldier> soldiers;
+    public ArrayList<Soldier> roster;
 
     public SoldierList() {
-        soldiers = new ArrayList<Soldier>();
-        soldiers.add(new Soldier("Archer", 50));
-        soldiers.add(new Soldier("Knight", 100));
+        roster = new ArrayList<Soldier>();
+        roster.add(new Soldier("Archer", 50));
+        roster.add(new Soldier("Knight", 100));
     }
 
-    public ArrayList<Soldier> getSoldiers() {
-        return new ArrayList<Soldier>(soldiers);
+    public ArrayList<Soldier> getRoster() {
+        return new ArrayList<Soldier>(roster);
     }
 
     public String getSoldierName(int i) {
-        Soldier currentSoldier = soldiers.get(i);
+        Soldier currentSoldier = roster.get(i);
         return currentSoldier.getName();
     }
 
     public String getSoldierType(int i) {
-        Soldier currentSoldier = soldiers.get(i);
+        Soldier currentSoldier = roster.get(i);
         return  currentSoldier.getType();
     }
 
     public int getSoldierCost(int i) {
-        Soldier curenntSoldier = soldiers.get(i);
-        return curenntSoldier.getCost();
+        Soldier currentSoldier = roster.get(i);
+        return currentSoldier.getCost();
     }
 }

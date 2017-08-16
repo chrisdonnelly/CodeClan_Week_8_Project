@@ -8,6 +8,7 @@
         android:icon="?attr/homeAsUpIndicator"
         android:onClick="onButtonClickedManage"
         android:title="@string/action_home"
+        android:visible="true"
         app:showAsAction="always" />
 
     <item
@@ -15,6 +16,7 @@
         android:icon="@android:drawable/ic_menu_add"
         android:onClick="onButtonClickedNew"
         android:title="@string/action_new_warband"
+        android:visible="true"
         app:showAsAction="always" />
 
 </menu>
