@@ -22,13 +22,9 @@ public class WizardSchoolsAdapter extends ArrayAdapter<School> {
 
         School currentSchool = getItem(position);
 
-//        TextView school_name = (TextView) listItemView.findViewById(R.id.school_name);
-
         TextView school_name = new RadioButton(getContext());
 
         school_name.setText(currentSchool.getSchoolName());
-
-//        listItemView.setTag(currentSchool);
 
         return school_name;
     }

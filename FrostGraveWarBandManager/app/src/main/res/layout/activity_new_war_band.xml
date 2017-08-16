@@ -8,23 +8,15 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
-        android:layout_width="0dp"
+        android:layout_width="368dp"
         android:layout_height="56dp"
-        android:background="?attr/colorPrimary"
+        android:background="@android:color/holo_blue_dark"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        android:visibility="visible"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp" />
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp" />
+
 
     <RadioGroup
         android:id="@+id/wizardSchool"
@@ -57,11 +49,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@+id/wizardName"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/new_wizard_save"
-        app:layout_constraintVertical_bias="0.642" />
+        android:layout_marginTop="78dp"
+        app:layout_constraintTop_toBottomOf="@+id/wizardName" />
 
     <EditText
         android:id="@+id/wizardName"
@@ -87,15 +76,11 @@
         android:layout_height="wrap_content"
         android:onClick="onButtonClickedSave"
         android:text="@string/save"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginBottom="132dp"
-        app:layout_constraintBottom_toTopOf="@+id/wizardSchool"
-        app:layout_constraintHorizontal_bias="0.028"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        android:layout_marginTop="38dp"
+        app:layout_constraintTop_toBottomOf="@+id/choose_school" />
 
     <TextView
         android:id="@+id/magic_school"
@@ -113,5 +98,21 @@
         app:layout_constraintBottom_toTopOf="@+id/choose_school"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wizardName" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/fg2"
+        app:layout_constraintLeft_toRightOf="@+id/new_wizard_save"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/choose_school"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintVertical_bias="0.724" />
 
 </android.support.constraint.ConstraintLayout>

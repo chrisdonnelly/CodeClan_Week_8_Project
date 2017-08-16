@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,6 +40,26 @@ public class NewWarBandActivity extends AppCompatActivity implements ChooseSchoo
         choose = (Button) findViewById(R.id.choose_school);
 
         save = (Button) findViewById(R.id.new_wizard_save);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_favorite) {
+            Intent intent = new Intent(this, WarBandManagerActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (item.getItemId() == R.id.action_settings) {
+            Intent intent = new Intent(this, NewWarBandActivity.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void onButtonClickedChoose(View Button) {

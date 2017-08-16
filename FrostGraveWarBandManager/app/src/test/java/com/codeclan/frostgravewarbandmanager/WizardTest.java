@@ -9,11 +9,13 @@ public class WizardTest {
 
     Wizard wizard;
     Spell spell;
+    Soldier soldier;
 
     @Before
     public void before() {
         wizard = new Wizard("Marlin the Magfishan", "Chronomancer");
         spell = new Spell("Enchant Weapon", "Enchanter");
+        soldier = new Soldier("Crossbowman", -50);
     }
 
     @Test
@@ -38,26 +40,31 @@ public class WizardTest {
     }
 
     @Test
-    public void canSpendOrGainGold() {
-        wizard.transact(-100);
+    public void canSpendGold() {
+        wizard.transact(100);
         assertEquals(400, wizard.getGold());
     }
 
-//    @Test
-//    public void canGetSpellBook() {
-//        assertEquals("[]", wizard.getSpellBook());
-//    }
+    @Test
+    public void canGetSpellBook() {
+        assertEquals("[]", wizard.getSpellBook());
+    }
 
-//    @Test
-//    public void canAddSpellToSpellBook() {
-//        wizard.spellBook.add(spell);
-//        assertEquals(spell, wizard.getSpell(0));
-//    }
+    @Test
+    public void canAddSpellToSpellBook() {
+        wizard.spellBook.add(spell);
+        assertEquals(spell, wizard.getSpell(0));
+    }
 
-//    @Test
-//    public void canRemoveSpellFromSpellBook() {
-//        wizard.spellBook.remove(spell);
-//        assertEquals(0, wizard.spellBook.size());
-//    }
+    @Test
+    public void canRemoveSpellFromSpellBook() {
+        wizard.spellBook.remove(spell);
+        assertEquals(0, wizard.spellBook.size());
+    }
 
+    @Test
+    public void canAddSoldierToRoster () {
+        wizard.addSoldier(soldier);
+        assertEquals(1, wizard.soldiers.size());
+    }
 }

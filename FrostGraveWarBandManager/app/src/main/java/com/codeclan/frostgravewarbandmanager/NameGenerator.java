@@ -1,12 +1,14 @@
 package com.codeclan.frostgravewarbandmanager;
 
 
-public class NameGenerator {
+import java.io.Serializable;
+
+public class NameGenerator implements Serializable {
 
     public String[] names;
 
     public NameGenerator() {
-        this.names = new String[13];
+        this.names = new String[20];
         this.names[0] = "Merek";
         this.names[1] = "Carac";
         this.names[2] = "Ulric";
@@ -20,6 +22,13 @@ public class NameGenerator {
         this.names[10] = "Fendrel";
         this.names[11] = "Brom";
         this.names[12] = "Hadrian";
+        this.names[13] = "Walter De Bolbec";
+        this.names[14] = "Oliver Cromwell";
+        this.names[15] = "Sir Clifton Writingham";
+        this.names[16] = "Walter deGrey";
+        this.names[17] = "Leofrick";
+        this.names[18] = "John of Gaunt";
+        this.names[19] = "Simon de Montfort";
     }
 }
 

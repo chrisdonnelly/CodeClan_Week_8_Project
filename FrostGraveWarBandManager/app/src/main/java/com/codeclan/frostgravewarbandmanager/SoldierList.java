@@ -13,6 +13,12 @@ public class SoldierList {
         roster = new ArrayList<Soldier>();
         roster.add(new Soldier("Archer", 50));
         roster.add(new Soldier("Knight", 100));
+        roster.add(new Soldier("Infantryman", 50));
+        roster.add(new Soldier("Thief", 20));
+        roster.add(new Soldier("Man-at-Arms", 80));
+        roster.add(new Soldier("Thug", 20));
+        roster.add(new Soldier("Treasure Hunter", 80));
+        roster.add(new Soldier("Barbarian", 100));
     }
 
     public ArrayList<Soldier> getRoster() {

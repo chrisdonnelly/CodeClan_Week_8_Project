@@ -1,9 +1,12 @@
 package com.codeclan.frostgravewarbandmanager;
 
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Soldier {
+import static java.lang.String.valueOf;
+
+public class Soldier implements Serializable {
 
     public String name;
     public String type;
@@ -34,5 +37,10 @@ public class Soldier {
 
     public int getCost() {
         return this.cost;
+    }
+
+    public String getDetails(){
+        String cost = String.valueOf(this.cost);
+        return this.name + " the " + this.type + " " + cost + " Gold";
     }
 }

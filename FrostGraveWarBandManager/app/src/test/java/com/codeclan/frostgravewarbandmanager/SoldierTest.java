@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertNotNull;
 
 public class SoldierTest {
 
@@ -16,8 +17,8 @@ public class SoldierTest {
     }
 
     @Test
-    public String canGetName(){
-        return soldier.getName();
+    public void canGetName(){
+        assertNotNull(soldier.getName());
     }
 
     @Test

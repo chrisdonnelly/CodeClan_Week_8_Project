@@ -6,6 +6,7 @@ import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -23,12 +24,12 @@ public class RecruitDialogFragment extends DialogFragment {
         soldierList = new SoldierList();
         roster = soldierList.getRoster();
 
-        selectedSoldiers= new ArrayList<Soldier>();
+        selectedSoldiers = new ArrayList<>();
 
-        String[] primitiveSoldiers = new String[2];
+        String[] primitiveSoldiers = new String[8];
         int count = 0;
         for (Soldier soldier : roster){
-            primitiveSoldiers[count] = soldier.getName();
+            primitiveSoldiers[count] = soldier.getDetails();
             count++;
         }
 
@@ -50,7 +51,8 @@ public class RecruitDialogFragment extends DialogFragment {
                 .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-
+                        Log.d("check", selectedSoldiers.toString());
+                        rListener.onDialogPositiveClick(RecruitDialogFragment.this, selectedSoldiers);
                     }
                 })
                 .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
@@ -63,7 +65,7 @@ public class RecruitDialogFragment extends DialogFragment {
     }
 
     public interface RecruitDialogListener {
-        public void onDialogPositiveClick(DialogFragment dialog, int i);
+        public void onDialogPositiveClick(DialogFragment dialog, ArrayList<Soldier> arrayList);
     }
 
     @Override

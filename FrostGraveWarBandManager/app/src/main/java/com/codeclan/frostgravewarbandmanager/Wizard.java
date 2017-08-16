@@ -51,7 +51,11 @@ public class Wizard implements Serializable {
     }
 
     public int transact(int i) {
-        return this.gold += i;
+        return this.gold -= i;
+    }
+
+    public void addSoldier(Soldier soldier) {
+        this.soldiers.add(soldier);
     }
 
 

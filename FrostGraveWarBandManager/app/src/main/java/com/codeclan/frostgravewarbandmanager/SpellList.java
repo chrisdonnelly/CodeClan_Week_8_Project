@@ -23,7 +23,7 @@ public class SpellList {
     }
 
     public String getSchool(int i) {
-        Spell curenntSpell = spells.get(i);
-        return curenntSpell.getSchool();
+        Spell curentSpell = spells.get(i);
+        return curentSpell.getSchool();
     }
 }

@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 public class ChooseSchoolDialogFragment extends DialogFragment {
 
-    WizardSchoolsAdapter schoolsAdapter;
     WizardSchools wizardSchools;
     ArrayList<School> schools;
     NoticeDialogListener mListener;
@@ -44,9 +43,7 @@ public class ChooseSchoolDialogFragment extends DialogFragment {
                 .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
-                        Log.d("fragment", String.valueOf(i));
                         mListener.onDialogPositiveClick(ChooseSchoolDialogFragment.this, mStoreChoice);
-
                     }
                 });
 
@@ -67,5 +64,4 @@ public class ChooseSchoolDialogFragment extends DialogFragment {
                     + " must implement NoticeDialogListener");
         }
     }
-
 }
