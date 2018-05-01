@@ -1,5 +1,7 @@
 # Mobile_App_Using_Java_and_Android_Studio
 
+This was my second project from my time at CodeClan.  Created after two weeks of studying Java and Android Studio.
+
 This personal project involved creating a mobile app using the Android Studio IDE. 
 
 I was responsible for every stage of the development cycle.
@@ -12,4 +14,4 @@ I adopted a MVC pattern with a focus on SOLID principles.
 
 Data was persisted thoughout the app useing SharedPrefrences.
 
-The app provides a companion management tool for a well established table top game, a product that should have appeal to and demand from a pre-established audience. 
+The app provides a companion management tool for a well established table top game, a product that should have appeal to, and demand from, a pre-established audience. 
